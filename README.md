@@ -1,38 +1,37 @@
-# SQL Assessment: Employee Management System
+Autism Spectrum Disorder (ASD) Early Detection Model
+A machine learning-based project designed to enhance the early diagnosis of Autism Spectrum Disorder (ASD) across different age groups. This tool leverages various machine learning algorithms to identify patterns in behavioral data, aiming to reduce diagnostic time and costs while supporting clinical decision-making.
 
-## Overview
+Table of Contents
+Project Overview
+Features
+Technologies Used
+Data
+Model Training
+Results
+How to Use
+Future Work
+Contributors
+Project Overview
+Autism Spectrum Disorder (ASD) impacts social interaction, communication, and behavior. Early diagnosis can greatly improve outcomes by providing timely interventions. This project explores and implements various machine learning algorithms to detect ASD indicators in individuals based on their behavioral data.
 
-This project is designed to test the ability to design relational databases, write complex SQL queries, and handle data relationships. The assessment involves creating a schema for an Employee Management System and writing several SQL queries to interact with the data.
+Features
+Implements multiple machine learning models: Logistic Regression, Naive Bayes, Support Vector Machine (SVM), K-Nearest Neighbors (KNN), and Convolutional Neural Network (CNN).
+Advanced pattern recognition for early detection of ASD symptoms.
+High accuracy in test cases, making it a reliable diagnostic aid.
+Flexible model selection and training for ongoing improvement.
+Technologies Used
+Programming Language: Python
+Machine Learning Libraries:
+Algorithms: Logistic Regression, Naive Bayes, SVM, KNN, CNN
+Frameworks: TensorFlow, PyTorch
+Data Processing: NumPy, Pandas
+Visualization: Matplotlib, Seaborn
+Data
+The dataset contains 1,055 records and includes behavioral data across various age groups. The features represent specific traits associated with ASD diagnosis criteria.
 
-## Database Schema
+Model Training
+Each model was trained on the dataset to assess its effectiveness in identifying ASD traits. The CNN and KNN algorithms were particularly effective for complex data patterns, contributing significantly to the high accuracy achieved.
 
-The project consists of three tables: `employees`, `departments`, and `salaries`.
-
-### Tables
-
-1. **Departments**
-    - `department_id` (INT, Primary Key)
-    - `department_name` (VARCHAR(100), NOT NULL)
-
-2. **Employees**
-    - `employee_id` (INT, Primary Key)
-    - `first_name` (VARCHAR(50), NOT NULL)
-    - `last_name` (VARCHAR(50), NOT NULL)
-    - `department_id` (INT, Foreign Key referencing `departments(department_id)`)
-    - `hire_date` (DATE)
-
-3. **Salaries**
-    - `employee_id` (INT, Foreign Key referencing `employees(employee_id)`)
-    - `salary` (DECIMAL(10, 2))
-    - `from_date` (DATE)
-    - `to_date` (DATE)
-    - Primary Key (`employee_id`, `from_date`)
-
-## SQL Queries
-
-### 1. Find all employees who have been hired in the last year
-
-```sql
-SELECT employee_id, first_name, last_name, hire_date
-FROM employees
-WHERE hire_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
+Results
+Testing Accuracy: Achieved an impressive 94.92% accuracy on the testing dataset.
+Performance Metrics: Evaluated using precision, recall, F1-score, and accuracy to ensure balanced performance.
